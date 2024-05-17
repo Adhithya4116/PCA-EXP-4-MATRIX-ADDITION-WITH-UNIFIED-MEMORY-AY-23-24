@@ -12,30 +12,52 @@ To perform Matrix addition with unified memory and check its performance with nv
 Hardware – PCs with NVIDIA GPU & CUDA NVCC
 Google Colab with NVCC Compiler
 ## PROCEDURE:
+  
 1.	Setup Device and Properties
 Initialize the CUDA device and get device properties.
+  
 2.	Set Matrix Size: Define the size of the matrix based on the command-line argument or default value.
+
 Allocate Host Memory
-3.	Allocate memory on the host for matrices A, B, hostRef, and gpuRef using cudaMallocManaged.
-4.	Initialize Data on Host
-5.	Generate random floating-point data for matrices A and B using the initialData function.
-6.	Measure the time taken for initialization.
-7.	Compute Matrix Sum on Host: Compute the matrix sum on the host using sumMatrixOnHost.
-8.	Measure the time taken for matrix addition on the host.
-9.	Invoke Kernel
-10.	Define grid and block dimensions for the CUDA kernel launch.
-11.	Warm-up the kernel with a dummy launch for unified memory page migration.
-12.	Measure GPU Execution Time
-13.	Launch the CUDA kernel to compute the matrix sum on the GPU.
-14.	Measure the execution time on the GPU using cudaDeviceSynchronize and timing functions.
-15.	Check for Kernel Errors
-16.	Check for any errors that occurred during the kernel launch.
-17.	Verify Results
-18.	Compare the results obtained from the GPU computation with the results from the host to ensure correctness.
-19.	Free Allocated Memory
-20.	Free memory allocated on the device using cudaFree.
-21.	Reset Device and Exit
-22.	Reset the device using cudaDeviceReset and return from the main function.
+4.	Allocate memory on the host for matrices A, B, hostRef, and gpuRef using cudaMallocManaged.
+
+6.	Initialize Data on Host
+  
+8.	Generate random floating-point data for matrices A and B using the initialData function.
+
+10.	Measure the time taken for initialization.
+  
+12.	Compute Matrix Sum on Host: Compute the matrix sum on the host using sumMatrixOnHost.
+  
+14.	Measure the time taken for matrix addition on the host.
+  
+16.	Invoke Kernel
+  
+18.	Define grid and block dimensions for the CUDA kernel launch.
+  
+20.	Warm-up the kernel with a dummy launch for unified memory page migration.
+  
+22.	Measure GPU Execution Time
+  
+24.	Launch the CUDA kernel to compute the matrix sum on the GPU.
+  
+26.	Measure the execution time on the GPU using cudaDeviceSynchronize and timing functions.
+  
+28.	Check for Kernel Errors
+  
+30.	Check for any errors that occurred during the kernel launch.
+  
+32.	Verify Results
+  
+34.	Compare the results obtained from the GPU computation with the results from the host to ensure correctness.
+  
+36.	Free Allocated Memory
+  
+38.	Free memory allocated on the device using cudaFree.
+  
+40.	Reset Device and Exit
+  
+42.	Reset the device using cudaDeviceReset and return from the main function.
 
 ## PROGRAM:
 ```
